@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.clock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-box, .period-box {
+  padding: 20px;
+  border-radius: 8px;
+  min-width: 80px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.time-box {
+  background-color: rgba(128, 0, 128, 0.8);
+}
+
+.time-box span {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  display: block;
+  font-weight: bold;
+}
+
+.time-box p {
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  margin-top: 5px;
+  color: #ddd;
+}
+
+.period-box {
+  background-color: green;
+  color: white;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  min-width: 60px;
+}
+
+.time-box:hover, .period-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Mobile Devices */
+@media (max-width: 768px) {
+  h1 {
+    margin-bottom: 20px;
+  }
+  .time-box, .period-box {
+    padding: 15px;
+    min-width: 70px;
+  }
+}
+
+/* 📱 Small Phones */
+@media (max-width: 480px) {
+  .clock {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .time-box, .period-box {
+    padding: 12px;
+    min-width: 60px;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+}
